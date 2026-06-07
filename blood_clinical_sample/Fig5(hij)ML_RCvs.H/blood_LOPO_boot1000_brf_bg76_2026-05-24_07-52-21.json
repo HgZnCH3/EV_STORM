@@ -1,0 +1,6 @@
+LOPO Accuracy_train:0.9535, Accuracy_test:0.8252, AUC:0.6697
+LOPO Confusion Matrix Train:[[1193   67]
+ [   0  182]]
+LOPO Confusion Matrix Test:[[158  22]
+ [ 14  12]]
+Bootstrap Accuracy_test: 0.7739 ± 0.1574
