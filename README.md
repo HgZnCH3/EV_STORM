@@ -2,6 +2,25 @@
 
 This is a repository for the code and data of the article "Nanoscale organization of universal extracellular vesicle markers in single vesicles enables cancer discrimination".
 
+## Environment:
+- Python 3.10.15  
+- SciPy 1.10.0  
+- scikit-image 0.25.0  
+- scikit-learn 1.5.1  
+- imbalanced-learn 0.14.0  
+- LightGBM 4.6.0  
+- statannotations 0.7.2
+- Matplotlib 3.9.2
+- NumPy 1.26.4
+- Seaborn 0.13.2
+
+## Example
+1. Download or clone the repository.
+2. Install the dependencies listed in requirements.txt or environment.yml.
+3. Open EV_Cluster.ipynb.
+4. Set data_dir, save_dir and ML_dir to the local paths containing the processed geometric descriptor data.
+5. Run the notebook cells to reproduce nanocluster geometric analysis, machine-learning classification and figure generation.
+
 ## Nanocluster analysis
 The distribution of surface proteins on single EVs was characterized using the Density-Based Spatial Clustering of Applications with Noise (DBSCAN) algorithm.[^1] By optimizing the neighborhood radius ($eps$) and the minimum number of localization points ($MinPts$), the algorithm effectively identified protein clusters of arbitrary shapes and distinguished specific molecular localizations from random background noise. In this study, the parameters were set to an $eps$ of 40 nm and a $MinPts$ of 5 to ensure accurate detection of protein nanoclusters across all imaging channels. To achieve spatial colocalization of CD63, EpCAM, and CD81 clusters on individual vesicles, a two-step DBSCAN clustering strategy was employed. The three-dimensional centroid coordinates of each protein nanocluster identified in the first round were extracted as a new dataset for a second round of DBSCAN analysis. Nanoclusters separated by a spatial distance of less than 350 nm were assigned to the same EV, and their identities were recorded for subsequent analysis.
 
