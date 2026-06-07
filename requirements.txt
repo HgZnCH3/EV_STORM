@@ -1,0 +1,9 @@
+SciPy
+scikit-image
+scikit-learn
+imbalanced-learn
+Light
+statannotations
+Seaborn
+Matplotlib
+NumPy
