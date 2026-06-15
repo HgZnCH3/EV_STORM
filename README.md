@@ -10,7 +10,7 @@ This script is supported for Linux and Windows. The script has been tested on th
 
 ### Environment:
 - Python 3.10.15  
-- SciPy 1.10.0  
+- SciPy 1.13.1  
 - scikit-image 0.25.0  
 - scikit-learn 1.5.1  
 - imbalanced-learn 0.14.0  
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 The distribution of surface proteins on single EVs was characterized using the Density-Based Spatial Clustering of Applications with Noise (DBSCAN) algorithm.[^1] By optimizing the neighborhood radius ($eps$) and the minimum number of localization points ($MinPts$), the algorithm effectively identified protein clusters of arbitrary shapes and distinguished specific molecular localizations from random background noise. In this study, the parameters were set to an $eps$ of 40 nm and a $MinPts$ of 5 to ensure accurate detection of protein nanoclusters across all imaging channels. To achieve spatial colocalization of CD63, EpCAM, and CD81 clusters on individual vesicles, a two-step DBSCAN clustering strategy was employed. The three-dimensional centroid coordinates of each protein nanocluster identified in the first round were extracted as a new dataset for a second round of DBSCAN analysis. Nanoclusters separated by a spatial distance of less than 350 nm were assigned to the same EV, and their identities were recorded for subsequent analysis.
 
 ## Geometric analysis
-The nanoclusters were projected onto 2D for geometric analysis. According to the resulting 2D coordinates, as shown in Supplementary Figure 5, the gaussian kernel density estimation (KDE) was calculated through SciPy (1.10.0). Then, a mask was applied to the KDE to filter out values smaller than threshold pf (pf = 0.25). Subsequently, the geometric parameters were extracted based on the filtered KDE through scikit-image (0.25.0) [^2]. All geometric feature data was calculated based on pixels, where 1 pixel = 4 nm. The normality of the geometric feature data of protein nanoclusters was examed using the scipy.stats.kstest function. The results show that the data does not follow a normal distribution (data not shown). Therefore, Mann Whitney test was used for significance testing between two independent samples and Kruskal-Wallis test was used for multiple (>2) samples. Significance testing and plotting are performed by the statannotations (0.7.2) library [^3].
+The nanoclusters were projected onto 2D for geometric analysis. According to the resulting 2D coordinates, as shown in Supplementary Figure 5, the gaussian kernel density estimation (KDE) was calculated through SciPy (1.13.1). Then, a mask was applied to the KDE to filter out values smaller than threshold pf (pf = 0.25). Subsequently, the geometric parameters were extracted based on the filtered KDE through scikit-image (0.25.0) [^2]. All geometric feature data was calculated based on pixels, where 1 pixel = 4 nm. The normality of the geometric feature data of protein nanoclusters was examed using the scipy.stats.kstest function. The results show that the data does not follow a normal distribution (data not shown). Therefore, Mann Whitney test was used for significance testing between two independent samples and Kruskal-Wallis test was used for multiple (>2) samples. Significance testing and plotting are performed by the statannotations (0.7.2) library [^3].
 
 ## Machine Learning Analysis
 
