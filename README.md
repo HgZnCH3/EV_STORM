@@ -19,6 +19,7 @@ This script is supported for Linux and Windows. The script has been tested on th
 - Matplotlib 3.9.2
 - NumPy 1.26.4
 - Seaborn 0.13.2
+- pandas 2.2.2
 
 ## Hardware requirements
 This script requires only a standard computer with enough RAM to support the in-memory operations. The script has been tested on the following systems:  
